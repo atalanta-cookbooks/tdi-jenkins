@@ -13,8 +13,8 @@ describe 'jenkins::default' do
   end
   
   it "makes the Jenkins yum repository available" do
-    file("/etc/yum.repos.d/jenkins").must_exist
-    file('/etc/yum.repos.d/jenkins').must_match /pkg\.jenkins-ci\.org\/redhat\/$/
+    file("/etc/yum.repos.d/jenkins.repo").must_exist
+    file('/etc/yum.repos.d/jenkins.repo').must_match /pkg\.jenkins-ci\.org\/redhat\/$/
   end
 
   it "enables the Jenkins yum repository" do
@@ -38,7 +38,7 @@ describe 'jenkins::default' do
   end
 
   it "serves the main Jenkins dashboard" do
-    assert_sh("wget -O - http://localhost:8080 2>&1 | grep 'Dashboard \[Jenkins\]'")
+    assert_sh("wget -O - http://localhost:8080 2>&1 | grep 'Dashboard \\\[Jenkins\\\]'")
   end
 
 end
