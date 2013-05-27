@@ -5,7 +5,7 @@ describe 'jenkins::default' do
   include Helpers::Jenkins
 
   it "installs Java" do
-    package("java").must_be_installed
+    package("java-1.6.0-openjdk").must_be_installed
   end
 
   it "ensures the installed Java is OpenJDK" do
