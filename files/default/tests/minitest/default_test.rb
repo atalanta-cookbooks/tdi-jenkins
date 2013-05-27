@@ -14,7 +14,7 @@ describe 'jenkins::default' do
   
   it "makes the Jenkins yum repository available" do
     file("/etc/yum.repos.d/jenkins.repo").must_exist
-    file('/etc/yum.repos.d/jenkins.repo').must_match /pkg\.jenkins-ci\.org\/redhat\/$/
+    file('/etc/yum.repos.d/jenkins.repo').must_match /pkg\.jenkins-ci\.org\/redhat$/
   end
 
   it "enables the Jenkins yum repository" do
